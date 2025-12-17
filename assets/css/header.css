@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+
+  p {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem;
+    font-size: 1.6rem;
+  }
+
+  .job::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("../images/person.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .location::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("../images/location.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .email::before {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("../images/email.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    max-width: 80rem;
+    display: grid;
+    grid-template-areas:
+      "photo title"
+      "photo information";
+
+    justify-content: space-around;
+  }
+
+  .photo {
+    grid-area: photo; /* Define a área da foto */
+    margin: 0 auto;
+  }
+
+  .title {
+    grid-area: title; /* Define a área do título */
+    text-align: start;
+  }
+
+  .information {
+    grid-area: information; /* Define a área da informação */
+  }
+}
