@@ -40,7 +40,7 @@
 }
 
 .acordeon-header:hover {
-  color: #000000;
+  color: #000000; /* Apenas no hover */
   cursor: pointer;
 }
 
@@ -48,18 +48,34 @@
   display: none;
 
   li {
+    margin-top: 1rem;
     list-style: none;
+    font-size: 1.3rem;
   }
 }
 
 .acordeon-body.active {
-  display: block;
-  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-evenly;
+  gap: 2.5rem;
+  padding: 2rem;
+
+  color: #fff;
+}
+
+.acordeon:has(.acordeon-body.active) {
+  background-color: #ff0000cc;
+  border: none;
+}
+
+.acordeon:has(.acordeon-body.active) .acordeon-header {
+  color: #fff; /* Mantém a cor da fonte branca */
 }
 
 .acordeon:has(.active) .acordeon-header::after {
   transform: rotate(180deg);
-  transition: tansform .3s linear;
+  transition: tansform 0.3s linear;
 }
 
 h2 {
